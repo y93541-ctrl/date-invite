@@ -3,151 +3,215 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biiiiishiiii, a tiny proposal 💌</title>
 <style>
+:root{--pink:#ec6994;--dark:#713c55;--cream:#fff5f7}
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100vh;font-family:Arial,sans-serif;
-  background:linear-gradient(145deg,#fff0f5,#ffe0e9,#fff5e8);
-  color:#63384b;text-align:center;overflow-x:hidden
+ margin:0;min-height:100vh;font-family:Arial,sans-serif;
+ color:var(--dark);text-align:center;
+ background:linear-gradient(145deg,#fff1f5,#ffe0eb,#fff7ec);
+ overflow-x:hidden
 }
-main{max-width:480px;margin:auto;padding:35px 22px 50px}
-h1{font-size:2rem;line-height:1.25;margin:18px 0}
+main{max-width:480px;margin:auto;padding:24px 18px 45px}
+h1{font-size:clamp(27px,7vw,36px);line-height:1.2;margin:16px 0}
 p{line-height:1.65}
-.heart{font-size:42px;animation:pulse 1.4s infinite}
-@keyframes pulse{50%{transform:scale(1.15)}}
+.small{font-size:13px;opacity:.8}
 .card{
-  background:#ffffffd9;border:1px solid #fff;border-radius:25px;
-  padding:25px 18px;margin-top:22px;
-  box-shadow:0 12px 35px #a34d6b18
+ background:#ffffffdc;border:1px solid white;border-radius:25px;
+ padding:24px 18px;margin:18px 0;
+ box-shadow:0 12px 35px #8d3d5b18
 }
+.hidden{display:none!important}
+.emoji{font-size:60px}
 button{
-  border:0;border-radius:30px;padding:14px 20px;margin:7px;
-  font-size:1rem;font-weight:bold;cursor:pointer;
-  background:#e95e8b;color:white;box-shadow:0 5px 12px #d66b8a30
+ border:0;border-radius:28px;padding:13px 18px;margin:6px;
+ font-size:15px;font-weight:700;cursor:pointer;
+ background:var(--pink);color:white;
+ box-shadow:0 5px 12px #b9497520
 }
 button:active{transform:scale(.97)}
-.secondary{background:#fff;color:#bd4774;border:1px solid #f3b6ca}
-.hidden{display:none!important}
-.gift{
-  font-size:100px;display:block;margin:18px auto;
-  background:none;box-shadow:none;padding:0;
-  animation:bob 1.6s infinite
-}
-@keyframes bob{50%{transform:translateY(-8px)}}
+.secondary{background:#fff;color:#a43c68;border:1px solid #f2b6cc}
+button:focus-visible{outline:3px solid #8d3d5b;outline-offset:3px}
+.gift{font-size:90px;background:none;box-shadow:none;display:block;margin:10px auto;animation:bob 1.5s infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.pill{display:inline-block;background:#ffe2ec;border-radius:20px;padding:8px 12px;font-size:13px}
+.bar{height:13px;background:#f7d9e4;border-radius:20px;overflow:hidden;margin:14px 0}
+.fill{height:100%;width:10%;background:linear-gradient(90deg,#ed78a1,#d94e83);border-radius:20px;transition:width .8s}
 .choice{display:block;width:100%;margin:10px 0}
-.note{font-size:.85rem;color:#986c7d}
-#message{min-height:24px;font-weight:bold}
-.heartbit{position:fixed;top:-30px;pointer-events:none;animation:fall 3s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+#message{min-height:25px;font-weight:bold}
+.secretLink{background:none;color:#b46a85;box-shadow:none;font-size:13px}
+.heartbit{position:fixed;top:-35px;pointer-events:none;z-index:5;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(300deg);opacity:0}}
+footer{font-size:12px;opacity:.75;padding-top:14px}
 </style>
 </head>
 <body>
 <main>
-  <div class="heart">💌</div>
-  <p>A tiny surprise, just for you</p>
+ <div class="emoji">💌</div>
+ <p class="pill">An extremely unofficial proposal</p>
 
-  <section class="card" id="start">
-    <h1>Hey, you! 👀</h1>
-    <p>I have something to ask you...</p>
-    <p>But first, you have to open your little surprise. 🎁</p>
-    <button class="gift" onclick="openGift()" aria-label="Open gift">🎁</button>
-    <button onclick="openGift()">Open your gift ✨</button>
-  </section>
+ <section class="card" id="start">
+  <div class="emoji">🎁</div>
+  <h1>Oi, Biiiiishiiii!</h1>
+  <p>Your favourite kiddo has prepared something.</p>
+  <p>Before you judge me, please remember: I'm only two years younger. That's basically the same age with better marketing. 😌</p>
+  <button class="gift" onclick="openGift()" aria-label="Open your gift">🎁</button>
+  <button onclick="openGift()">Open your suspiciously cute gift</button>
+  <p class="small">No gifts were harmed in the making of this proposal.</p>
+ </section>
 
-  <section class="card hidden" id="ask">
-    <div style="font-size:65px">🥹💗</div>
-    <h1>Will you go on a date with me?</h1>
-    <p>No pressure, no awkward speech. Just you, me, and hopefully some good food. ❤️</p>
-    <button onclick="yes()">YES! 💖</button>
-    <button class="secondary" onclick="thinking()">I'M THINKING 🤔</button>
-    <button class="secondary" onclick="no()">NOT THIS TIME 🙈</button>
-    <p id="message"></p>
-  </section>
+ <section class="card hidden" id="ask">
+  <div class="emoji">🧒🏻💐</div>
+  <h1>Dear Biiiiishiiii,</h1>
+  <p>I have a very serious question. Please put aside your senior-citizen wisdom for approximately 10 seconds.</p>
+  <p>Remember when you said I had <b>10 out of 100 chances</b> with you?</p>
+  <div class="pill">Current official kiddo statistics 📊</div>
+  <div class="bar"><div class="fill" id="meter"></div></div>
+  <p><b id="percent">10%</b> chance of success.</p>
+  <p class="small">The committee has received no evidence that these odds have improved. The committee is still optimistic, though. 😭</p>
+  <h1>Will you go on a date with me?</h1>
+  <p>Not a relationship contract. Not a marriage application. Just one date to see if we have fun together. ❤️</p>
+  <button onclick="yes()">YES, KIDDO! 💖</button>
+  <button class="secondary" onclick="maybe()">I NEED TO THINK 🤔</button>
+  <button class="secondary" onclick="no()">NO, KIDDO 💀</button>
+  <p id="message" aria-live="polite"></p>
+ </section>
 
-  <section class="card hidden" id="plans">
-    <div style="font-size:55px">🥳💞</div>
-    <h1>Okay, this is exciting!</h1>
-    <p>Pick the kind of date you'd enjoy most:</p>
-    <button class="choice" onclick="plan('Coffee and a cute little walk ☕🌷')">☕ Coffee & a walk</button>
-    <button class="choice" onclick="plan('Good food and even better company 🍕🍜')">🍕 Food date</button>
-    <button class="choice" onclick="plan('Something fun, spontaneous and a little chaotic 🎳🎡')">🎳 Fun & adventure</button>
-    <button class="choice" onclick="plan('You choose. I trust your taste 😉')">😉 Surprise me</button>
-    <p id="chosen"></p>
-    <p class="note">Your pick is a cute suggestion, not a booking. You can decide the details together.</p>
-    <button class="secondary" onclick="copyPlan()">Copy my date idea 📋</button>
-    <p id="copied" class="note"></p>
-  </section>
+ <section class="card hidden" id="plans">
+  <div class="emoji">🥳</div>
+  <h1>THE KIDDO HAS ADVANCED!</h1>
+  <p>Okay, Biiiiishiiii, if you're genuinely up for it, choose our date vibe:</p>
+  <button class="choice" onclick="plan('Coffee and a walk ☕🌷')">☕ Coffee and a walk</button>
+  <button class="choice" onclick="plan('Food and absolutely unnecessary gossip 🍕')">🍕 Food and gossip</button>
+  <button class="choice" onclick="plan('Something fun and slightly chaotic 🎳')">🎳 Fun and chaos</button>
+  <button class="choice" onclick="plan('You choose; I will pretend to be decisive 😉')">😉 You choose</button>
+  <p id="chosen" aria-live="polite"></p>
+  <button class="secondary" onclick="copyPlan()">Copy our date idea 📋</button>
+  <p id="copyStatus" class="small" aria-live="polite"></p>
+  <p class="small">No booking is made here. We can decide the details together.</p>
+ </section>
 
-  <section class="card hidden" id="maybe">
-    <div style="font-size:55px">🌷</div>
-    <h1>No rush at all!</h1>
-    <p>Take your time. If you feel like it, you can always come back to this little invitation. 💗</p>
-    <button onclick="back()">Back to the question</button>
-  </section>
+ <section class="card hidden" id="maybeCard">
+  <div class="emoji">🌷</div>
+  <h1>Take your time, Biiiiishiiii.</h1>
+  <p>No countdown. No pressure. The kiddo can survive a little suspense. Probably.</p>
+  <button onclick="backToQuestion()">Return to the question</button>
+ </section>
 
-  <section class="card hidden" id="notnow">
-    <div style="font-size:55px">🫶</div>
-    <h1>All good 💗</h1>
-    <p>Thanks for being honest. No pressure, and no hard feelings. Hope this made you smile anyway!</p>
-  </section>
+ <section class="card hidden" id="noCard">
+  <div class="emoji">🫶</div>
+  <h1>All good, Biiiiishiiii.</h1>
+  <p>Thank you for being honest with your tiny, emotionally dramatic kiddo.</p>
+  <p>Your answer is respected. No guilt, no convincing, no hard feelings. I hope this at least made you smile. 💗</p>
+  <button class="secondary" onclick="backToStart()">Back to the beginning</button>
+ </section>
 
-  <p class="note" style="margin-top:28px">Made with a little courage and a lot of 💗</p>
+ <section class="card hidden" id="secretCard">
+  <div class="emoji">🕵️‍♀️💗</div>
+  <h1>Secret message unlocked!</h1>
+  <p>Biiiiishiiii, jokes aside, I know you said 10/100. I'm not expecting you to change your mind just because I made a website.</p>
+  <p>I just wanted to make you smile and ask properly. You're worth the effort, and the choice is always yours.</p>
+  <p>— Yogesh, your slightly delusional kiddo 🫡</p>
+  <button class="secondary" onclick="closeSecret()">Back to the invitation</button>
+ </section>
+
+ <section class="card">
+  <button class="secondary" id="musicBtn" onclick="toggleMusic()">🎵 Play a tiny original tune</button>
+  <p class="small" id="musicStatus" aria-live="polite">Optional background music · tap to play or pause</p>
+  <button class="secretLink" onclick="unlockSecret()">psst... tap here if you're curious 👀</button>
+ </section>
+
+ <footer>Built with courage, questionable statistics, and 💗<br>Made by Yogesh for Biiiiishiiii.</footer>
 </main>
+
 <script>
+const sections=['start','ask','plans','maybeCard','noCard','secretCard'];
+let current='start',chosenPlan='',audioCtx=null,musicTimer=null,musicOn=false,noteIndex=0;
+
 function show(id){
-  ['start','ask','plans','maybe','notnow'].forEach(x=>
-    document.getElementById(x).classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
+ sections.forEach(s=>document.getElementById(s).classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ current=id;
+ window.scrollTo({top:0,behavior:'smooth'});
 }
-function openGift(){show('ask');confetti()}
-function yes(){show('plans');confetti()}
-function thinking(){show('maybe')}
-function no(){show('notnow')}
-function back(){show('ask')}
-let chosenPlan='';
-function plan(value){
-  chosenPlan=value;
-  document.getElementById('chosen').textContent='Your date vibe: '+value;
-  document.getElementById('copied').textContent='';
-  confetti();
-}
-function copyPlan(){
-  if(!chosenPlan){
-    document.getElementById('copied').textContent='Choose your date vibe first 💗';
-    return;
-  }
-  const text='My date idea: '+chosenPlan;
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(()=>{
-      document.getElementById('copied').textContent='Copied! Send your date idea 💌';
-    }).catch(()=>fallbackCopy(text));
-  }else fallbackCopy(text);
-}
-function fallbackCopy(text){
-  const el=document.createElement('textarea');
-  el.value=text;document.body.appendChild(el);el.select();
-  try{document.execCommand('copy');
-    document.getElementById('copied').textContent='Copied! Send your date idea 💌';
-  }catch(e){
-    document.getElementById('copied').textContent=text;
-  }
-  el.remove();
-}
+function openGift(){show('ask');confetti();}
+function yes(){show('plans');confetti();}
+function maybe(){show('maybeCard');}
+function no(){show('noCard');}
+function backToQuestion(){show('ask');}
+function backToStart(){show('start');}
+function unlockSecret(){show('secretCard');confetti();}
+function closeSecret(){show(current==='secretCard'?'start':'ask');}
+
 function confetti(){
-  const symbols=['💗','💕','✨','💖','🌸'];
-  for(let i=0;i<18;i++){
-    const el=document.createElement('span');
-    el.className='heartbit';
-    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-    el.style.left=Math.random()*100+'vw';
-    el.style.animationDelay=Math.random()*.8+'s';
-    el.style.fontSize=(16+Math.random()*18)+'px';
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),4000);
+ const icons=['💗','💕','✨','🌸','💖'];
+ for(let i=0;i<20;i++){
+  const e=document.createElement('span');
+  e.className='heartbit';
+  e.textContent=icons[Math.floor(Math.random()*icons.length)];
+  e.style.left=Math.random()*100+'vw';
+  e.style.animationDelay=Math.random()*.8+'s';
+  e.style.fontSize=(15+Math.random()*18)+'px';
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),4000);
+ }
+}
+function plan(value){
+ chosenPlan=value;
+ document.getElementById('chosen').textContent='Date vibe selected: '+value;
+ document.getElementById('copyStatus').textContent='';
+ confetti();
+}
+async function copyPlan(){
+ const out=document.getElementById('copyStatus');
+ if(!chosenPlan){out.textContent='Pick a date vibe first, boss 😭';return;}
+ const txt='Biiiiishiiii + Yogesh date idea: '+chosenPlan;
+ try{
+  if(navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(txt);
+  else{
+   const el=document.createElement('textarea');el.value=txt;
+   document.body.appendChild(el);el.select();
+   const ok=document.execCommand('copy');el.remove();
+   if(!ok) throw new Error('copy unavailable');
   }
+  out.textContent='Copied! You can send this date idea 💌';
+ }catch(e){out.textContent=txt;}
+}
+
+/* Original little melody made from simple tones; no external music file. */
+const melody=[523,659,784,659,587,698,880,784,659,784,659,523];
+function playNote(){
+ if(!musicOn||!audioCtx)return;
+ const freq=melody[noteIndex%melody.length];noteIndex++;
+ const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+ osc.type='sine';osc.frequency.value=freq;
+ gain.gain.setValueAtTime(0.0001,audioCtx.currentTime);
+ gain.gain.exponentialRampToValueAtTime(0.07,audioCtx.currentTime+.04);
+ gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+.32);
+ osc.connect(gain);gain.connect(audioCtx.destination);
+ osc.start();osc.stop(audioCtx.currentTime+.34);
+}
+async function toggleMusic(){
+ const btn=document.getElementById('musicBtn');
+ const status=document.getElementById('musicStatus');
+ if(musicOn){
+  musicOn=false;clearInterval(musicTimer);musicTimer=null;
+  if(audioCtx)await audioCtx.suspend();
+  btn.textContent='🎵 Play a tiny original tune';
+  status.textContent='Music paused';
+  return;
+ }
+ try{
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC){status.textContent='This browser does not support the music feature.';return;}
+  if(!audioCtx)audioCtx=new AC();
+  await audioCtx.resume();
+  musicOn=true;playNote();musicTimer=setInterval(playNote,390);
+  btn.textContent='⏸ Pause the tiny tune';
+  status.textContent='Playing a tiny original tune 💗';
+ }catch(e){status.textContent='Music could not start. Please try tapping again.';}
 }
 </script>
 </body>
